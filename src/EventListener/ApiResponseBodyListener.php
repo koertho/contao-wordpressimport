@@ -1,5 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of the WordPressImport Bundle.
+ *
+ * (c) inspiredminds <https://github.com/inspiredminds>
+ */
+
 namespace WordPressImportBundle\EventListener;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -7,7 +15,6 @@ use WordPressImportBundle\Event\ApiResponseBodyEvent;
 
 class ApiResponseBodyListener implements EventSubscriberInterface
 {
-
     public static function getSubscribedEvents()
     {
         return [
@@ -15,7 +22,7 @@ class ApiResponseBodyListener implements EventSubscriberInterface
         ];
     }
 
-    public function onApiResponseBodyEvent(ApiResponseBodyEvent $event)
+    public function onApiResponseBodyEvent(ApiResponseBodyEvent $event): void
     {
         $json = $event->getBody();
 
@@ -31,5 +38,4 @@ class ApiResponseBodyListener implements EventSubscriberInterface
 
         $event->setBody($json);
     }
-
 }

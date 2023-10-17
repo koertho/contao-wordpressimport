@@ -1,5 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of the WordPressImport Bundle.
+ *
+ * (c) inspiredminds <https://github.com/inspiredminds>
+ */
+
 namespace WordPressImportBundle\Event;
 
 use GuzzleHttp\Client;
